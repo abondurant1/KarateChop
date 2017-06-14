@@ -1,14 +1,14 @@
-﻿namespace KarateChop
+﻿using System.Linq;
+
+namespace KarateChop
 {
     public class Karate
     {
        public int Chop(int target, int[] numberArray)
         {
-            for(int index = 0; index < numberArray.Length; index++)
-                if (target == numberArray[index]) 
-                    return index;
+            var index = numberArray.ToList().IndexOf(target);
              
-            return -1;
+            return index;
         }
     }
 }
